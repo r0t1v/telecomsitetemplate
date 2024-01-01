@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+  		<meta name="description" content="Website telecom template">
+  		<meta name="keywords" content="HTML, CSS, jQuery">
+  		<meta name="author" content="Vitor G. Dantas">
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Seu site - Home</title>
+		<link rel="icon" type="image/ico" href="src/icon.png">
+		<link rel="stylesheet" href="styles/styles.css">
+		<link rel="stylesheet" href="styles/animations.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	</head>
+	<body>
+	<!-- Header -->
+		<div class="navinit" id="listmenu" align="center">
+				<div class="container">
+				  <div class="row">
+				    <div class="col"><a href="#planos" style="text-decoration: none; color: white">
+				    <i class="bi bi-house-fill"></i> Para sua residência</a>
+				    </div>
+				    <div class="col"><a href="#empresa" style="text-decoration: none; color: white">
+				    <i class="bi bi-building"></i> Para sua empresa</a>
+				    </div>
+				    <div class="col"><a href="#provedor" style="text-decoration: none; color: white">
+				    <i class="bi bi-globe2"></i> Para seu provedor</a>
+				    </div>
+				  </div>
+			</div>
+		</div>
+	<!-- Header -->
+	<!-- Menu/NavBar -->
+		<div class="menu" align="center">
+			<div class="container">
+			  <div class="row">
+			    <div class="col-sm-3" align="center"><a href="./">
+			    <img src="src/navbar/logomain.png"></a>
+				</div>
+			    <div class="col-sm-9" style="margin-top: 30px">
+			      <div class="row" align="center">
+			        <div class="col-8 col-sm-3">
+			          <a href="pages/contato.html" id="menuitem" style="text-decoration: none; color: #130f40">Seja Nosso Cliente</a>
+			        </div>
+			        <div class="col-8 col-sm-3">
+			          <a href="#solucoes" id="menuitem" style="width: 50%; text-decoration: none; color: #130f40">Soluções</a>
+			        </div>
+			        <div class="col-8 col-sm-3">
+			          <a href="#novidades" id="menuitem" style="width: 55%; text-decoration: none; color: #130f40">Novidades</a>
+			        </div>
+			        <div class="col-8 col-sm-3">
+			          <a href="#" id="menuitem" style="width: 80%;text-decoration: none; color: #130f40">Área do Cliente</a>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<nav class="navbar navbar-light bg-light fixed-top" id="menumobile">
+			  <div class="container-fluid" id="contentoffcanvas">
+			    <a class="navbar-brand" id="logomain" href="index.html"><img src="src/navbar/logomainmobile.png"></a>
+			    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+			      <span class="navbar-toggler-icon"></span>
+			    </button>
+			    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+			      <div class="offcanvas-header">
+			        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="src/navbar/logomobilecanvas.png"></h5>
+			        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			      </div>
+			      <div class="offcanvas-body">
+			        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+			          <li class="nav-item">
+			            <a class="nav-link active" aria-current="page" href="#menumobile">Inicio</a>
+			          </li>
+			          <li class="nav-item">
+			            <a class="nav-link" href="pages/contato.html">Seja Nosso Cliente</a>
+			          </li>
+			          <li class="nav-item dropdown">
+			            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			              Soluções
+			            </a>
+			            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+			              <li><a class="dropdown-item" href="#planos">Soluções para sua Residência</a></li>
+			              <li><a class="dropdown-item" href="#empresa">Soluções para sua Empresa</a></li>
+						  <li><a class="dropdown-item" href="#provedor">Soluções para seu Provedor</a></li>
+			            </ul>
+			          </li>
+			           <li class="nav-item">
+			            <a class="nav-link" href="#novidades">Notícias</a>
+			          </li>
+			          <li class="nav-item">
+			            <a class="nav-link" href="#">Área do Cliente</a>
+			          </li>
+			        </ul>
+			      </div>
+			    </div>
+			  </div>
+			</nav>
+		</div>
+	<!-- Menu/NavBar -->
+	<!-- hr -->
+		<div id="separator"></div>
+	<!-- hr -->
+	<!-- groundbar -->
+		<div class="groundbar" align="center"><span>
+			A maior cobertura de Internet Fibra Óptica!</span>
+		</div>
+		<!-- groundbar -->
+		<!-- contrate -->
+		<div class="assine" align="center">
+			<canvas id="canvas"></canvas>
+			<a href="pages/contato.html"><img id="foguete"class="img-fluid" src="src/rocket.gif"></a>
+			<script src="https://unpkg.com/starback@1.0.0/dist/starback.js"></script>
+				<script>
+				  const canvas = document.getElementById('canvas')
+				  const starback = new Starback(canvas, {
+				  	width: 1980,
+				  	height: 300,
+				    speed: 10,
+				    spread: 0.2,
+					backgroundColor: "#130F40",
+				  })
+				  starback.generateStar(100)
+				</script>
+		</div>
+		<!-- contrate -->
+		<!-- infos -->
+		<div class="infomain" align="center">
+			<h3>Sua empresa possui soluções avançadas em internet 100% Fibra Óptica para a sua necessidade, para pessoas que buscam velocidade, economia, qualidade e suporte.</h3>
+			<h1 id="planos">Planos <strong>para você</strong></h1>
+			<div class="conteudoplanos">
+			    	<div class="card text-center" id="planocontainer">
+					  <div class="card-header" id="planotop"><i class="bi bi-reception-4"></i> Plano <strong>111 MEGAS</strong> <span class="badge rounded-pill bg-secondary" style="box-shadow: 0px 2px white"><i class="bi bi-house-fill"></i> Básico</span> <span class="badge rounded-pill bg-primary" style="box-shadow: 0px 2px white"><i class="bi bi-wifi"></i> 2.4G + 5G</span></div>
+					  	 <div id="separator"></div>
+						 <div class="card-body" id="planobody" align="left">
+						    <p class="card-text"><ul style="list-style-type: none">
+						    <li><i class="bi bi-download"></i> Download:<strong> 111Mb/s</strong></li>
+						    <li><i class="bi bi-upload"></i> Upload:<strong> 111Mb/s</strong></li>
+						    <li><i class="bi bi-unlock-fill"></i> Franquia:<strong> Ilimitada</strong></li>
+						    <li><i class="bi bi-phone-vibrate-fill"></i> Roteador:<strong> Em comodato</strong></li>
+						    <li><i class="bi bi-tools"></i> Instalação:<strong> R$ 00,00</strong></li>
+						    <li><i class="bi bi-rainbow"></i> Metragem Padrão:<strong> 1000 mts</strong></li>
+						    <li><i class="bi bi-cash-coin"></i> Desconto Mensal:<strong> 5%</strong></li>
+						    </ul>
+							</p>
+						  </div>
+						  <div id="separator"></div>
+			  			<div class="card-footer text-muted" id="planobot" align="center"><ul style="list-style-type: none; padding: 0px">
+			  			<li>Até a data de vencimento:</li>
+			    		<li>R$<strong> 111</strong></> / Mês</li>
+			    		<li>Após a data de vencimento:</li>
+			    		<li>R$<strong> 111</strong> / Mês</></li>
+			    		</ul>
+			  			</div>
+			    	</div>
+			      <div class="card text-center" id="planocontainer">
+					  <div class="card-header" id="planotopgold"><i class="bi bi-reception-4"></i> Plano <strong>222 MEGAS</strong> <span class="badge rounded-pill bg-warning" style="box-shadow: 0px 2px white"><i class="bi bi-star-fill"></i> Popular</span> <span class="badge rounded-pill bg-primary" style="box-shadow: 0px 2px white"><i class="bi bi-wifi"></i> 2.4G + 5G</span></div>
+					  <div id="separator"></div>
+						 <div class="card-body" id="planobody" align="left">
+						    <p class="card-text"><ul style="list-style-type: none">
+						    <li><i class="bi bi-download"></i> Download:<strong> 222Mb/s</strong></li>
+						    <li><i class="bi bi-upload"></i> Upload:<strong> 222Mb/s</strong></li>
+						    <li><i class="bi bi-unlock-fill"></i> Franquia:<strong> Ilimitada</strong></li>
+						    <li><i class="bi bi-phone-vibrate-fill"></i> Roteador:<strong> Em comodato</strong></li>
+						    <li><i class="bi bi-tools"></i> Instalação:<strong> R$ 00,00</strong></li>
+						    <li><i class="bi bi-rainbow"></i> Metragem Padrão:<strong> 1000 mts</strong></li>
+						    <li><i class="bi bi-cash-coin"></i> Desconto Mensal:<strong> 5%</strong></li>
+						    </ul>
+							</p>
+						  </div>
+						  <div id="separator"></div>
+			  			<div class="card-footer text-muted" id="planobotgold" align="center"><ul style="list-style-type: none; padding: 0px">
+			  			<li>Até a data de vencimento:</li>
+			    		<li>R$<strong> 222</strong> / Mês</li>
+			    		<li>Após a data de vencimento:</li>
+			    		<li>R$<strong> 222</strong> / Mês</li>
+			    		</ul>
+			  			</div>
+			    </div>
+			      <div class="card text-center" id="planocontainer">
+					  <div class="card-header" id="planotop"><i class="bi bi-reception-4"></i> Plano <strong>333 MEGAS</strong> <span class="badge rounded-pill bg-success" style="box-shadow: 0px 2px white"><i class="bi bi-lightning-fill"></i> Veloz</span> <span class="badge rounded-pill bg-primary" style="box-shadow: 0px 2px white"><i class="bi bi-wifi"></i> 2.4G + 5G</span></div>
+					  <div id="separator"></div>
+						 <div class="card-body" id="planobody" align="left">
+						    <p class="card-text"><ul style="list-style-type: none">
+						    <li><i class="bi bi-download"></i> Download:<strong> 333Mb/s</strong></li>
+						    <li><i class="bi bi-upload"></i> Upload:<strong> 333Mb/s</strong></li>
+						    <li><i class="bi bi-unlock-fill"></i> Franquia:<strong> Ilimitada</strong></li>
+						    <li><i class="bi bi-phone-vibrate-fill"></i> Roteador:<strong> Em comodato</strong></li>
+						    <li><i class="bi bi-tools"></i> Instalação:<strong> R$ 00,00</strong></li>
+						    <li><i class="bi bi-rainbow"></i> Metragem Padrão:<strong> 1000 mts</strong></li>
+						    <li><i class="bi bi-cash-coin"></i> Desconto Mensal:<strong> 5%</strong></li>
+						    </ul>
+							</p>
+						  </div>
+						  <div id="separator"></div>
+			  			<div class="card-footer text-muted" id="planobot" align="center"><ul style="list-style-type: none; padding: 0px">
+			  			<li>Até a data de vencimento:</li>
+			    		<li>R$<strong> 333</strong> / Mês</li>
+			    		<li>Após a data de vencimento:</li>
+			    		<li>R$<strong> 333</strong> / Mês</li>
+			    		</ul>
+			  			</div>
+			    </div>
+			      <div class="card text-center" id="planocontainer">
+					  <div class="card-header" id="planotop"><i class="bi bi-reception-4"></i> Plano <strong>444 MEGAS</strong> <span class="badge rounded-pill bg-dark" style="box-shadow: 0px 2px white"><i class="bi bi-gem"></i> Máximo</span> <span class="badge rounded-pill bg-primary" style="box-shadow: 0px 2px white"><i class="bi bi-wifi"></i> 2.4G + 5G</span></div>
+					  <div id="separator"></div>
+						 <div class="card-body" id="planobody" align="left">
+						    <p class="card-text"><ul style="list-style-type: none">
+						    <li><i class="bi bi-download"></i> Download:<strong> 444Mb/s</strong></li>
+						    <li><i class="bi bi-upload"></i> Upload:<strong> 444Mb/s</strong></li>
+						    <li><i class="bi bi-unlock-fill"></i> Franquia:<strong> Ilimitada</strong></li>
+						    <li><i class="bi bi-phone-vibrate-fill"></i> Roteador:<strong> Em comodato</strong></li>
+						    <li><i class="bi bi-tools"></i> Instalação:<strong> R$ 00,00</strong></li>
+						    <li><i class="bi bi-rainbow"></i> Metragem Padrão:<strong> 1000 mts</strong></li>
+						    <li><i class="bi bi-cash-coin"></i> Desconto Mensal:<strong> 5%</strong></li>
+						    </ul>
+							</p>
+						  </div>
+						  <div id="separator"></div>
+			  			<div class="card-footer text-muted" id="planobot" align="center"><ul style="list-style-type: none; padding: 0px">
+			  			<li>Até a data de vencimento:</li>
+			    		<li>R$<strong> 444</strong> / Mês</li>
+			    		<li>Após a data de vencimento:</li>
+			    		<li>R$<strong> 444</strong> / Mês</li>
+			    		</ul>
+			  			</div>
+			</div>
+		</div>
+		<h2>Nossos planos são totalmente<strong> sem fidelidade!</strong></h2>
+	</div>
+		<!-- infos -->
+		<!-- Cobertura -->
+		<div class="cobertura" align="center">
+			<h1>A MAIOR COBERTURA DO MUNDO</h1>
+			<ul style="list-style-type: none">
+			<div class="container">
+			  <div class="row">
+			    <div class="col" align="left">
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    </div>
+			    <div class="col" align="left">
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    	<li><i class="bi bi-geo-alt-fill"></i> Cidade</li>
+			    </div>
+			  </div>
+			  <h3 style="color: white"><i class="bi bi-map-fill"></i> Em expansão...</h3>
+			</div>
+			</ul>
+			<h1>NOSSA INFRAESTRUTURA</h1>
+			<div class="infra">
+				 <div class="conteudoinfra">
+					      <div class="card-body">
+						    <p><i class="bi bi-hdd-network-fill"></i></p>
+						    <h2 style="font-weight: bold">+24</h2>
+						    <p style="font-size: 20px; font-weight: bold">Terminais de Fibra Ativos</p>
+						  </div>
+					      <div class="card-body">
+						    <p><i class="bi bi-people-fill"></i></p>
+						    <h2 style="font-weight: bold">+50</h2>
+						    <p style="font-size: 20px; font-weight: bold">Parceiros & Apoiadores</p>
+						  </div>
+					      <div class="card-body">
+						    <p><i class="bi bi-emoji-heart-eyes"></i></p>
+						    <h2 style="font-weight: bold">+90%</h2>
+						    <p style="font-size: 20px; font-weight: bold">Clientes Satisfeitos</p>
+						  </div>
+					      <div class="card-body">
+						    <p><i class="bi bi-bar-chart-fill"></i></p>
+						    <h2 style="font-weight: bold">+40.000</h2>
+						    <p style="font-size: 20px; font-weight: bold">Conexões Ativas</p>
+						  </div>
+				</div>
+		</div>
+	</div>
+		<!-- Cobertura -->
+		<!-- solucoes main -->
+		<div class="solucoes" id="solucoes" align="center">
+			<h1>Soluções</h1>
+			<div class="conteudosolucoes">
+			    	<div class="card text-dark bg-light mb-3" id="cards">
+					  <div class="card-header" id="cardtop"><i class="bi bi-bezier2"></i></div>
+					  <div class="card-body">
+					    <h5 class="card-title" style="font-weight: bold">Conexão 100% Fibra óptica</h5>
+					    <p class="card-text">Nossa conexão é baseada na tecnologia FTTH (Fiber to the home), onde a conexão entre o provedor e a residência é totalmente fibra óptica.</p>
+					  </div>
+			    	</div>
+			    <div class="card text-dark bg-light mb-3" id="cards">
+					  <div class="card-header" id="cardtop"><i class="bi bi-hdd-stack-fill"></i></div>
+					  <div class="card-body">
+					    <h5 class="card-title" style="font-weight: bold">Maior Backbone do mundo</h5>
+					    <p class="card-text">Interconecta diretamente 20 cidades do Estado com rede própria. Backbone com capacidade 40Gbps de transporte e preparada para upgrades.</p>
+					  </div>
+				</div>
+			    <div class="card text-dark bg-light mb-3" id="cards">
+					  <div class="card-header" id="cardtop"><i class="bi bi-headset"></i></div>
+					  <div class="card-body">
+					    <h5 class="card-title" style="font-weight: bold">Suporte 24/7/365</h5>
+					    <p class="card-text">Suporte ao cliente 24hrs por dia, 7 dias por semana, e 365 dias ao ano, incluindo domingos e feriados com SLA 99,2% de disponibilidade.</p>
+					  </div>
+				</div>
+			    <div class="card text-dark bg-light mb-3" id="cards">
+					  <div class="card-header" id="cardtop"><i class="bi bi-shield-shaded"></i></div>
+					  <div class="card-body">
+					    <h5 class="card-title" style="font-weight: bold">Data Center Tier 2</h5>
+					    <p class="card-text">Maior confiabilidade, segurança e redundância, e serviços de documentação de redes ópticas, utilizando aplicativo de mapeamento próprio.</p>
+					  </div>
+				</div>
+			    <div class="card text-dark bg-light mb-3" id="cards">
+					  <div class="card-header" id="cardtop"><i class="bi bi-diagram-3-fill"></i></div>
+					  <div class="card-body">
+					    <h5 class="card-title" style="font-weight: bold">Três Rotas IP distintas</h5>
+					    <p class="card-text">Dois diferentes pontos de abordagem para Link IP, e Sistema Autônomo de Endereçamento IP (ASN), já preparado para atendimento em IPv6.</p>
+					  </div>
+				</div>
+			    <div class="card text-dark bg-light mb-3" id="cards">
+					  <div class="card-header" id="cardtop"><i class="bi bi-server"></i></div>
+					  <div class="card-body">
+					    <h5 class="card-title" style="font-weight: bold">Content Delivery Network</h5>
+					    <p class="card-text">CDN com os principais conteúdos: Facebook, Google, Youtube, Netflix, Microsoft e muitos outras para possibilitar a melhor entrega de conteúdo para sua conexão.</p>
+					  </div>
+				</div>
+			</div>
+		</div>
+		<!-- solucoes main -->
+		<!-- solucoes cliente -->
+		<div class="solucao-cliente" align="center">
+			<h1>Soluções da Área do cliente</h1>
+			<div class="cliente">
+				 	<div class="conteudocliente">
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-file-earmark-fill"></i></p>
+						    <h2>2ª Via de boleto</h2>
+						  </div>
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-search"></i></p>
+						    <h2>Nº de Protocolos</h2>
+						  </div>
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-telephone-inbound-fill"></i></p>
+						    <h2>Solicitar contato</h2>
+						  </div>
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-unlock-fill"></i></p>
+						    <h2>Desbloquear Conexão</h2>
+						  </div>
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-arrow-up-circle-fill"></i></p>
+						    <h2>Retirar Redução</h2>
+						  </div>
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-credit-card-fill"></i></p>
+						    <h2>Registrar Cartão</h2>
+						  </div>
+					</div>
+			</div>
+		</div>
+		<!-- solucoes empresa -->
+		<div class="solucao-empresa" id="empresa" align="center">
+			<h1>Soluções para sua empresa</h1>
+			<div class="empresa">
+				 	<div class="conteudoempresa">
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-layer-forward"></i></p>
+						    <h2>Link Dedicado</h2>
+						  </div>
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-cone-striped"></i></p>
+						    <h2>Intervenção Imediata</h2>
+						  </div>
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-broadcast-pin"></i></p>
+						    <h2>Instalação de Hotspot</h2>
+						  </div>
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-truck"></i></p>
+						    <h2>Transportes de Dados</h2>
+						  </div>
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-terminal-fill"></i></p>
+						    <h2>Monitoramento 24hrs</h2>
+						  </div>
+					</div>
+			</div>
+		</div>
+		<!-- solucoes empresa -->
+		<!-- solucoes provedor -->
+		<div class="solucao-provedor" id="provedor" align="center">
+			<h1>Soluções para seu provedor</h1>
+			<div class="provedor">
+				<div class="conteudoprovedor">
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-hand-thumbs-up-fill"></i></p>
+						    <h2>Terceirização</h2>
+						  </div>
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-arrow-left-right"></i></p>
+						    <h2>Swaps</h2>
+						  </div>
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-intersect"></i></p>
+						    <h2>PTT's</h2>
+						  </div>
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-arrows-angle-contract"></i></p>
+						    <h2>Fusões</h2>
+						  </div>
+					      <div class="card-body">
+						    <p style="font-size: 64px"><i class="bi bi-hdd-network-fill"></i></p>
+						    <h2>Rotas Backup</h2>
+						  </div>
+				</div>
+			</div>
+		</div>
+		<!-- solucoes provedor -->
+		<!-- novidades -->
+		<div class="novidades" id="novidades" align="center">
+			<h2>Últimas <strong>Novidades</strong></h2>
+				<div class="container">
+				    <!-- card noticia -->
+				    <div class="card mb-3" id="cardnoticia" style="max-width: 540px; max-height: 540px">
+						  <div class="row g-0">
+						    <div class="col-md-4">
+						      <img src="src/slider.png" class="img-fluid rounded-start" alt="...">
+						    </div>
+						    <div class="col-md-8">
+						      <div class="card-body">
+						        <h5 class="card-title"><strong><a href="#" id="menuitem" style="width: 25%; text-decoration: none; color: #000066">Notícia 1</a></strong></h5>
+						        <p class="card-text">Descrição da Notícia 1</p>
+						        <p class="card-text"><small class="text-muted">Segunda-feira - 18 de Outubro 2021 | <span class="badge bg-warning text-dark">Evento</span></small></p>
+						      </div>
+						    </div>
+						  </div>
+					</div>
+					<!-- card noticia -->
+				    <!-- card noticia -->
+				    <div class="card mb-3" id="cardnoticia" style="max-width: 540px; max-height: 540px">
+						  <div class="row g-0">
+						    <div class="col-md-4">
+						      <img src="src/slider.png" class="img-fluid rounded-start" alt="...">
+						    </div>
+						    <div class="col-md-8">
+						      <div class="card-body">
+						        <h5 class="card-title"><strong><a href="#" id="menuitem" style="width: 25%; text-decoration: none; color: #000066">Notícia 2</a></strong></h5>
+						        <p class="card-text">Descrição da Notícia 2</p>
+						        <p class="card-text"><small class="text-muted">Segunda-feira - 18 de Outubro 2021 | <span class="badge bg-info text-dark">Notícia</span></small></p>
+						      </div>
+						    </div>
+						  </div>
+					</div>
+					<!-- card noticia -->
+				    <!-- card noticia -->
+				    <div class="card mb-3" id="cardnoticia" style="max-width: 540px; max-height: 540px">
+						  <div class="row g-0">
+						    <div class="col-md-4">
+						      <img src="src/slider.png" class="img-fluid rounded-start" alt="...">
+						    </div>
+						    <div class="col-md-8">
+						      <div class="card-body">
+						        <h5 class="card-title"><strong><a href="#" id="menuitem" style="width: 25%; text-decoration: none; color: #000066">Notícia 3</a></strong></h5>
+						        <p class="card-text">Descrição da Notícia 3</p>
+						        <p class="card-text"><small class="text-muted">Segunda-feira - 18 de Outubro 2021 | <span class="badge bg-warning text-dark">Evento</span></small></p>
+						      </div>
+						    </div>
+						  </div>
+					</div>
+					<!-- card noticia -->
+				    <!-- card noticia -->
+				    <div class="card mb-3" id="cardnoticia" style="max-width: 540px; max-height: 540px">
+						  <div class="row g-0">
+						    <div class="col-md-4">
+						      <img src="src/slider.png" class="img-fluid rounded-start" alt="...">
+						    </div>
+						    <div class="col-md-8">
+						      <div class="card-body">
+						        <h5 class="card-title"><strong><a href="#" id="menuitem" style="width: 25%; text-decoration: none; color: #000066">Notícia 4</a></strong></h5>
+						        <p class="card-text">Descrição da Notícia 4</p>
+						        <p class="card-text"><small class="text-muted">Segunda-feira - 18 de Outubro 2021 | <span class="badge bg-info text-dark">Notícia</span></small></p>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+					<!-- card noticia -->
+				</div>
+			<p id="maisnoticia"><a href="pages/novidades.html" style="text-decoration: none; color: #130f40"><i class="bi bi-plus-lg"></i> Novidades</a></p>
+		</div>
+		<!-- novidades -->
+		<footer class="rodape">
+			<div class="container" align="center">
+			  <div class="row">
+			    <div class="col" style="padding-top: 40px">
+			    	<div class="itemrodape" id="itemrodape" align="center">
+			      <a href="./" id="rodapeitem" style="width: 75%; padding-bottom: 10px; text-decoration: none; color: white"><img src="src/footericon.png"></a>
+			    	</div>
+			    </div>
+			    <div class="col">
+			    	<div class="itemrodape" id="itemrodape" align="center">
+			      <h5 style="font-weight: bold; color: #718093">Cliente</h5>
+			      <ul style="list-style-type: none">
+			      	<li><a href="#planos" id="rodapeitem" style="width: 87%; text-decoration: none; color: white">Conheça nossos planos</a></li>
+			      	<li><a href="pages/novidades.html" id="rodapeitem" style="width: 39%;text-decoration: none; color: white">Novidades</a></li>
+			      	<li><a href="pages/contato.html" id="rodapeitem" style="width: 61%;text-decoration: none; color: white">Solicitar contato</a></li>
+			      	<li><a href="#" id="rodapeitem" style="width: 56%;text-decoration: none; color: white">Área do cliente</a></li>
+			      </ul>
+			    </div>
+			    </div>
+			    <div class="col">
+			    <div class="itemrodape" id="itemrodape" align="center">
+			      <h5 style="font-weight: bold; color: #718093">Seu site</h5>
+			      <ul style="list-style-type: none">
+			      	<li><a href="#empresa" id="rodapeitem" style="text-decoration: none; color: white">Conexão para sua empresa</a></li>
+			      	<li><a href="#provedor" id="rodapeitem" style="text-decoration: none; color: white">Conexão para seu provedor</a></li>
+			      	<li><a href="#" target="blank" id="rodapeitem" style="width: 67%;text-decoration: none; color: white">Trabalhe Conosco</a></li>
+			      	<li><a href="#" id="rodapeitem" style="width: 75%;text-decoration: none; color: white">Área do colaborador</a></li>
+			      </ul>
+			    </div>
+			    </div>
+			    <div class="col">
+			    <div class="itemrodape" id="itemrodape" align="center">
+			    	<h5 style="font-weight: bold; color: #718093">Contato</h5>
+			     	<ul style="list-style-type: none">
+						<li><a href="#" target="blank" style="text-decoration: none; color: white"><i class="bi bi-messenger"></i> @sua_telecom</a></li>
+						<li><a href="#" target="blank" style="text-decoration: none; color: white"><i class="bi bi-whatsapp"></i> (00) 0000-0000</a></li>
+						<li><a href="#" target="blank" style="text-decoration: none; color: white"><i class="bi bi-telegram"></i> @sua_telecom</a></li>
+			      	</ul>
+			    </div>
+			    </div>
+			    <div class="col">
+			    	<div class="itemrodape" id="itemrodape" align="center">
+			    	<h5 style="font-weight: bold; color: #718093">Redes Sociais</h5>
+			     	<ul style="list-style-type: none">
+						<li><a href="#" target="blank" style="text-decoration: none; color: white"><i class="bi bi-facebook"></i> @sua_telecom</a></li>
+						<li><a href="#" target="blank" style="text-decoration: none; color: white"><i class="bi bi-instagram"></i> @sua_telecom</a></li>
+						<li><a href="#" target="blank" style="text-decoration: none; color: white"><i class="bi bi-linkedin"></i> @sua_telecom</a></li>
+			      	</ul>
+			    </div>
+			    </div>
+			  </div>
+			  <div class="row">
+			  	<center>
+			  	<a href="#" style="font-size: 22px;text-decoration: none; color: white"><i class="bi bi-envelope-open-fill"></i> <strong>sac@suatelecomtemplate.com.br</strong></a>
+				<hr id="final">
+				<p id="final" align="center"><strong>Template gratis / 2023 - Fork o quanto quiser</strong><br>Use e abuse<br><i class="bi bi-pin-map-fill"></i> Em qualquer lugar<br>Desenvolvido por <a href="https://github.com/r0t1v" target="blank" style="text-decoration: none; color: #0652DD">Vitor Gabriel</a></p>
+				</center>
+			</div>
+			</div>
+		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	</body>
+</html>
